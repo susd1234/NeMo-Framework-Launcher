@@ -38,6 +38,10 @@ spec:
               name: dshm
             - mountPath: /config
               name: data-prep-config
+            - mountPath: /fsx-shared
+              - name: fsx-pv1
+                persistentVolumeClaim:
+                  claimName: fsx-pvc1
             imagePullPolicy: Always
           restartPolicy: Never
           imagePullSecrets:
